@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var path = window.location.pathname;
+        if (path.startsWith("/alm_rc/")) {
+            window.location.replace("https://bibliafld.pythonanywhere.com" + path);
+        } else {
+            document.write("<h1>Página não encontrada</h1>");
+        }
+    </script>
+    <title>Redirecionando...</title>
+</head>
+<body>
+    <p>Se não for redirecionado automaticamente, <a id="manual-link" href="#">clique aqui</a>.</p>
+    <script>
+        document.getElementById("manual-link").href = "https://bibliafld.pythonanywhere.com" + window.location.pathname;
+    </script>
+</body>
+</html>
