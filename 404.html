@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <script>
+        // Captura o caminho acessado
         var path = window.location.pathname;
-        if (path.startsWith("/alm_rc/")) {
-            window.location.replace("https://bibliafld.pythonanywhere.com" + path);
+
+        // Verifica se a URL acessada começa com /br/alm_rc/
+        if (path.startsWith("/br/alm_rc/")) {
+            // Redireciona para o servidor correto
+            window.location.replace("https://bibliafld.pythonanywhere.com" + path.replace("/br", ""));
         } else {
+            // Mostra uma mensagem de erro se não for uma URL reconhecida
             document.write("<h1>Página não encontrada</h1>");
         }
     </script>
@@ -15,7 +20,7 @@
 <body>
     <p>Se não for redirecionado automaticamente, <a id="manual-link" href="#">clique aqui</a>.</p>
     <script>
-        document.getElementById("manual-link").href = "https://bibliafld.pythonanywhere.com" + window.location.pathname;
+        document.getElementById("manual-link").href = "https://bibliafld.pythonanywhere.com" + window.location.pathname.replace("/br", "");
     </script>
 </body>
 </html>
