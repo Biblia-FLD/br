@@ -15,8 +15,13 @@
         // Captura o caminho acessado
         var path = window.location.pathname;
 
+        // Verifica se a URL acessada começa com /br
+        if (path.startsWith("/br")) {
+            // Redireciona para o servidor correto
+            window.location.replace("https://bibliafld.pythonanywhere.com");
+        }
         // Verifica se a URL acessada começa com /br/alm_rc/
-        if (path.startsWith("/br/alm_rc/")) {
+        else if (path.startsWith("/br/alm_rc/")) {
             // Redireciona para o servidor correto
             window.location.replace("https://bibliafld.pythonanywhere.com" + path.replace("/br", ""));
         } else {
